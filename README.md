@@ -2,6 +2,23 @@
 
 A machine learning-based text classification project that automatically identifies emails as **Spam** or **Ham (Not Spam)** using Natural Language Processing (NLP) and supervised learning techniques.
 
+## 🌐 Live Demo
+
+Try the **Email Spam Detection** application online:
+
+👉 **[Live Demo](http://127.0.0.1:5000/)**
+
+The live application allows users to:
+
+* 📩 Enter an email or message.
+* 🔍 Analyze the message using the trained ML model.
+* 🤖 Automatically classify the message as **Spam** or **Ham**.
+* 📊 View the prediction result instantly.
+
+> Replace `YOUR_LIVE_DEMO_URL` with your actual deployed application URL.
+
+---
+
 ## 📌 Project Overview
 
 Email spam is a common problem where unwanted, misleading, or potentially harmful messages are sent to users.
@@ -52,7 +69,7 @@ Spam / Ham Prediction
 
 ## 🔤 Text Preprocessing
 
-The following preprocessing techniques are applied to the email text:
+The following preprocessing techniques are applied:
 
 1. Convert text to lowercase.
 2. Remove unnecessary punctuation.
@@ -62,14 +79,18 @@ The following preprocessing techniques are applied to the email text:
 6. Remove unnecessary whitespace.
 7. Convert cleaned text into numerical features.
 
-Example:
+### Example
+
+**Original:**
 
 ```text
-Original:
-"Congratulations!!! You have WON a FREE prize. Click NOW!"
+Congratulations!!! You have WON a FREE prize. Click NOW!
+```
 
-After preprocessing:
-"congratulations won free prize click"
+**After preprocessing:**
+
+```text
+congratulations won free prize click
 ```
 
 ---
@@ -81,10 +102,6 @@ Since machine learning models cannot directly process raw text, the email messag
 ### TF-IDF
 
 **Term Frequency–Inverse Document Frequency (TF-IDF)** is used to represent the importance of words within the email dataset.
-
-TF-IDF gives higher importance to words that are useful for distinguishing between spam and legitimate messages.
-
-Example:
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -102,7 +119,7 @@ A supervised machine learning classifier is trained using the extracted text fea
 
 ### Logistic Regression
 
-Logistic Regression can be used as the primary classification algorithm because it performs well for many binary text-classification problems.
+Logistic Regression is used as the classification algorithm for identifying spam and legitimate messages.
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -142,11 +159,11 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 ```
 
-### Why These Metrics Matter
+### Evaluation Metrics
 
-**Precision:** Measures how many emails predicted as spam are actually spam.
+**Precision:** Measures how many messages predicted as spam are actually spam.
 
-**Recall:** Measures how many actual spam emails were successfully detected.
+**Recall:** Measures how many actual spam messages were successfully detected.
 
 **F1-Score:** Provides a balance between precision and recall.
 
@@ -163,7 +180,7 @@ The project uses an email/SMS spam classification dataset containing text messag
 | `label`   | Spam or Ham        |
 | `message` | Email/message text |
 
-Example:
+### Example
 
 | Label | Message                                  |
 | ----- | ---------------------------------------- |
@@ -256,12 +273,13 @@ Run all the cells sequentially.
 
 ## 🧪 Example Predictions
 
-### Example 1
+### Example 1 — Spam
 
 **Input:**
 
 ```text
-Congratulations! You have won a $1,000 cash prize. Claim now!
+Congratulations! You have won a $1,000 cash prize.
+Claim now!
 ```
 
 **Prediction:**
@@ -270,7 +288,7 @@ Congratulations! You have won a $1,000 cash prize. Claim now!
 🚨 Spam
 ```
 
-### Example 2
+### Example 2 — Ham
 
 **Input:**
 
@@ -284,12 +302,13 @@ Hi Anuja, can you send me the project report by tomorrow?
 ✅ Ham
 ```
 
-### Example 3
+### Example 3 — Spam
 
 **Input:**
 
 ```text
-You have been selected for a special offer. Click the link to claim your reward.
+You have been selected for a special offer.
+Click the link to claim your reward.
 ```
 
 **Prediction:**
@@ -300,6 +319,24 @@ You have been selected for a special offer. Click the link to claim your reward.
 
 ---
 
+## 🖥️ Application Demo
+
+Add screenshots of your deployed application here:
+
+```markdown
+![Spam Detection Application](screenshots/prediction.png)
+```
+
+You can include screenshots showing:
+
+* 🏠 Home page
+* 📝 Message input
+* 🔍 Prediction process
+* 🚨 Spam prediction
+* ✅ Ham prediction
+
+---
+
 ## 💡 Key Features
 
 * 📧 Email/text classification
@@ -307,21 +344,23 @@ You have been selected for a special offer. Click the link to claim your reward.
 * 🔤 TF-IDF feature extraction
 * 🤖 Machine learning classification
 * 📊 Model performance evaluation
-* 🔍 Real-time prediction for new messages
-* 📈 Confusion matrix and classification metrics
+* 🔍 Prediction for new messages
+* 🌐 Live web application
+* ⚡ Fast prediction results
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Develop a **Flask or Streamlit web application**.
-* Add multiple machine learning algorithms.
-* Compare Logistic Regression, Naive Bayes, SVM, and Random Forest.
+* Develop an advanced Flask or Streamlit web application.
+* Compare multiple ML algorithms.
+* Implement Naive Bayes, SVM, Random Forest, and XGBoost.
 * Use advanced NLP techniques.
 * Add email header and metadata analysis.
 * Implement deep learning models such as LSTM or BERT.
+* Improve model accuracy using hyperparameter tuning.
 * Deploy the model as an online spam detection service.
-* Add an interactive dashboard for prediction results.
+* Add an interactive prediction dashboard.
 
 ---
 
@@ -338,6 +377,7 @@ Through this project, I gained practical experience in:
 * Model evaluation
 * Python data analysis
 * Building an end-to-end ML pipeline
+* Deploying machine learning applications
 
 ---
 
@@ -358,12 +398,18 @@ B.Tech Student | AI/ML Enthusiast
 
 ---
 
-## ⭐ Future Goal
+## ⭐ Project Highlights
 
-The goal of this project is to demonstrate how machine learning and NLP can be applied to solve a practical cybersecurity and communication problem by automatically filtering unwanted messages.
+* Built an end-to-end **Email Spam Detection** system.
+* Applied **NLP techniques** for text preprocessing.
+* Used **TF-IDF** for text feature extraction.
+* Implemented **Logistic Regression** for classification.
+* Evaluated the model using multiple performance metrics.
+* Developed a **live web application** for real-time predictions.
 
 ---
 
 ## 📄 License
 
 This project is developed for **educational and research purposes**.
+
