@@ -15,8 +15,6 @@ The live application allows users to:
 * 🤖 Automatically classify the message as **Spam** or **Ham**.
 * 📊 View the prediction result instantly.
 
-> Replace `YOUR_LIVE_DEMO_URL` with your actual deployed application URL.
-
 ---
 
 ## 📌 Project Overview
